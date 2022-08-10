@@ -1,0 +1,66 @@
+{% extends 'adminapp/admin_master.html' %}
+{% load static %}
+{% block admin_content %}
+<style>
+    h1{
+    font-weight: bolder;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;   
+    padding-top: 40px   ; 
+}
+.table{
+    margin-top: 60px;
+    background-color: rgba(255, 253, 253, 0.4);
+    width: 900px;
+    /* margin-left: 49px; */
+}
+
+</style>
+
+<h1>ARTIST INFO</h1>
+<table class="table shadow">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Artist Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Category</th>
+        <th scope="col">Qualification</th>
+
+    </tr>
+    </thead>
+    <tbody>
+      {% for b in artist %}
+      <form action="" method="POST">
+        {% csrf_token %}
+      <tr>
+        <th scope="row">{{forloop.counter}}</th>
+        <td>{{b.name|capfirst}}</td>
+        <td>{{b.email}}</td>
+        <td>{{b.category|capfirst}}</td>
+        <td>{{b.qualification|capfirst}}</td>
+      </tr>
+    </form>
+    {% endfor %}
+    </tbody>
+  </table>
+
+  <nav aria-label="Page navigation example" style="padding-left: 720px;">
+    <ul class="pagination">
+      <li class="page-item">
+        <a style="color: black;"class="page-link" href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      <li class="page-item"><a style="color: black;" class="page-link" href="#">1</a></li>
+      <li class="page-item"><a style="color: black;" class="page-link" href="#">2</a></li>
+      <li class="page-item"><a style="color: black;" class="page-link" href="#">3</a></li>
+      <li class="page-item">
+        <a style="color: black;" class="page-link" href="#" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+</nav>
+
+{% endblock %}

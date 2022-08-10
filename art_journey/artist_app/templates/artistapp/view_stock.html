@@ -1,0 +1,152 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>art_journey</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'image/alogo.jpg' %}" height="100px">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+</head>
+<style>
+  h1{
+      font-family: 'Times New Roman', Times, serif;
+      background: #121FCF;
+      background: -webkit-linear-gradient(to right, #121FCF 0%, #CF1512 100%);
+      background: -moz-linear-gradient(to right, #121FCF 0%, #CF1512 100%);
+      background: linear-gradient(to right, #121FCF 0%, #CF1512 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-align: center;
+      padding-top: 15px;
+      font-weight: bolder;
+      margin-bottom: 30px;
+}
+    body{
+            margin: 0;
+        }
+        .nav1{
+            background-color: rgb(0, 0, 0);
+            height: 70px;
+        }
+       .a1{
+            color: #fff;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+        }
+        .a1:hover{
+            color: #fff;
+        }
+        .a2{
+            color: #fff;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+            margin-left: 40px;
+        }
+        .a2:hover{
+            color: #fff;
+        }
+        .a3{
+            color: #fff;
+            margin-left: 80px;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+        }
+        .a3:hover{
+            color: #fff;
+        }
+        .a4{
+          margin-left: 150px;
+        }
+        
+        .main1{
+            margin-top: 30px;
+        }
+        .card-img-top{
+          height: 200px;
+        }
+        .a_img{
+          color: black;
+        }
+        
+        
+</style>
+<body>
+    <nav class=" row navbar navbar-expand-lg navbar-light nav1 ">
+        <div class="col-md-6 col-ms-6 col-xs-6 ">
+          <img  src="{% static 'images/blogo.jpg' %}" width="60px" height="60px" alt="">
+         </div>
+          <div class="collapse navbar-collapse col-md-1 col-ms-2 col-xs-2 " id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="a1" aria-current="page" href="{% url 'home' %}">HOME</a>
+                </li>
+              </ul>
+          </div>
+          
+          <div class="collapse navbar-collapse col-md-1 col-ms-2 col-xs-2" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="a2"  aria-current="page" href="{% url 'about' %}">ABOUT</a>
+                </li>
+              </ul>
+          </div>
+          <div class="collapse navbar-collapse col-md-1 col-sm-2 col-xs-2" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="a3" aria-current="page" href="{% url 'contact' %}">CONTACT</a>
+                </li>
+              </ul>
+          </div> 
+          
+          <div class="collapse navbar-collapse col-md-1 col-sm-2 col-xs-2" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                {% if 'artist_id' in request.session %}
+                <a class="a4" aria-current="page" href="{% url 'artist:artist_home' %}"><i class="bi bi-arrow-left-circle" style="color: #fff; font-size: 2rem;"></i></i></a>
+                
+                {% elif 'user_id' in request.session %}
+                <a class="a4" aria-current="page" href="{% url 'artist_details' %}"><i class="bi bi-arrow-left-circle" style="color: #fff; font-size: 2rem;"></i></i></a>
+                {% endif %}
+              </li>
+            </ul>
+          </div>
+          
+      </nav>
+
+      <h1>GALLERIA</h1>
+
+      <div class="row">
+
+        {% for p in product %}
+        
+            <div class="col-3">
+              <form action="" method="POST">
+                {% csrf_token %}
+              <div class="card" style="width: 18rem;">
+                  <a class="a_img" href="{% url 'show_product' %}"><img style="height: 300px; width: 290px;" src="{{p.image.url}}" class="card-img-top" alt="..."></a>
+                  <div class="card-body">
+                    <h5 class="card-title">{{p.product_name|upper}}</h5>
+                    <p class="card-text">{{p.desc|capfirst}}</p>
+                    <p class="card-text"> Price : {{p.price}} &nbsp;&nbsp;&nbsp; Stock : {{p.stock}}</p>
+                  </div>
+                </div>
+              </form>
+          </div>
+       
+          {% endfor %}
+      </div>
+</body>
+</html>

@@ -1,0 +1,178 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>art_journey</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'image/alogo.jpg' %}" height="100px">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+</head>
+    <style>
+        
+        body{
+            margin: 0;
+            background: #121FCF;
+      background: -webkit-linear-gradient(to right, #121FCF 0%, #CF1512 100%);
+      background: -moz-linear-gradient(to right, #121FCF 0%, #CF1512 100%);
+      background: linear-gradient(to right, #121FCF 0%, #CF1512 100%);
+        }
+        .nav1{
+            background-color: rgb(0, 0, 0);
+            height: 70px;
+        }
+       .a1{
+            color: #fff;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+        }
+        .a1:hover{
+            color: #fff;
+        }
+        .body{
+            height: 660px;
+            width: 100%;
+            background-repeat: no-repeat;
+        }
+        
+        h2{
+            color: #fff;
+            margin-top:30px ;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        li{
+            list-style: none;
+            color: #fff;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+        }
+        a{
+            color: #fff;
+            
+        }
+        .l1{
+            padding-top: 50px;
+        }
+        #menu .items li:hover{
+        background: rgb(27, 26, 26);
+    }
+    .box1{
+        background-color:black;
+        width: 400px;
+        height: 630px;
+    }
+    #menu .logo{
+        display: flex;
+        align-items: center;
+        color: azure;
+        padding: 30px 0 0 30px;
+
+    }
+
+    #menu .items{
+        margin-top: 50px;
+    }
+    #menu .items li{
+        list-style: none;
+        padding: 35px;
+    }
+    #menu .items li a{
+        text-decoration: none;
+        color: rgb(243, 243, 232);
+        font-family: 'Times New Roman', Times, serif;
+       
+    }
+    .main{
+    background-color: rgba(255, 255, 255, 0.829);
+    width: 900px;
+    height: 550px;
+    border-radius: 20px;
+    margin-top: 50px;
+    margin-left: 40px;
+}
+        
+       
+    </style>
+</head>
+<body>
+    <div class=" container-fluid body">
+        <nav class=" row navbar navbar-expand-lg navbar-light nav1 ">
+            <div class="col-md-6 col-ms-6 col-xs-6 ">
+              <img  src="{% static 'images/logo.png' %}" width="70px" height="60px" alt="">
+             </div>
+              <div class="collapse navbar-collapse col-md-1 col-ms-2 col-xs-2 " id="navbarNav">
+                  <ul class="navbar-nav">
+                    <li class="nav-item">
+                      <a class="a1" aria-current="page" href="{% url 'home' %}">HOME</a>
+                    </li>
+                  </ul>
+              </div>
+              
+              <div class="collapse navbar-collapse col-md-1 col-ms-2 col-xs-2" id="navbarNav">
+                  <ul class="navbar-nav">
+                    <li class="nav-item">
+                      <a class="a1"  aria-current="page" href="{% url 'about' %}">ABOUT</a>
+                    </li>
+                  </ul>
+              </div>
+              <div class="collapse navbar-collapse col-md-1 col-sm-2 col-xs-2" id="navbarNav">
+                  <ul class="navbar-nav">
+                    <li class="nav-item">
+                      <a class="a1" aria-current="page" href="{% url 'contact' %}">CONTACT</a>
+                    </li>
+                  </ul>
+              </div>
+
+              <div class="collapse navbar-collapse col-md-1 col-sm-2 col-xs-2" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="a1" style="padding:50px" aria-current="page" href="{% url 'artist:artist_profile' %}"><i class="bi bi-person-circle" style="color: #fff; font-size: 2rem;"></i></i></a>
+                  </li>
+                </ul>
+              </div>
+              
+          </nav>
+          <div class="row">
+              <div class="col-md-3 box1">
+                <section id="menu">
+                    <div class="logo">
+                       <h2>ART JOURNEY</h2><hr>
+                    </div>
+                    <div class="items">
+                        <li class="l1"><a class="a2" href="{% url 'artist:addstock' %}">ADD PRODUCT</a></li>
+                        <li class="l1"><a class="a2" href="{% url 'artist:view_stock' %}">VIEW PRODUCT</a></li>
+                        <li class="l1"><a class="a2" href="{% url 'artist:order_management' %}">ORDER MANAGEMENT</a></li>
+                        <li class="l1"><a class="a2" href="{% url 'artist:artist_logout' %}">LOGOUT</a></li>
+                    </div>
+                </section>
+
+              </div>
+              <div class="col-md-9">
+                  
+                <div class="main shadow">
+    
+                    {% block artist_content %}
+
+                    {% endblock %}
+                </div>
+
+                
+              </div>
+          </div>
+
+        
+    </div>
+</body>
+</html>

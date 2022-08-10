@@ -1,0 +1,177 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>art_journey</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'image/alogo.jpg' %}" height="100px">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/jquery.min.js' %}"></script>    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{% static 'css/reply.css' %}">
+
+    <style>
+        body{
+            margin: 0;
+        }
+        .nav1{
+            background-color: rgb(0, 0, 0);
+            height: 70px;
+        }
+       .a1{
+            color: #fff;
+        }
+        .a1:hover{
+            color: #fff;
+        }
+        .body{
+            background-image: url("{% static 'images/metrob.jpg' %}");
+            height: 660px;
+            width: 100%;
+            background-repeat: no-repeat;
+        }
+        body{
+    margin: 0;
+}
+.nav1{
+    background-color: rgb(0, 0, 0);
+    height: 70px;
+}
+.a1{
+    color: #fff;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+.a1:hover{
+    color: #fff;
+}
+.body{
+    background-image: url("{% static 'images/metrob.jpg' %}");
+    height: 800px;
+    width: 100%;
+    background-repeat: no-repeat;
+}
+h1{
+    font-weight: bolder;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;   
+    padding-top: 40px; 
+}
+
+.main{
+
+    width: 800px;
+    height: 600px;
+    margin-left: 300px;
+    margin-top: 50px;
+    background-color: rgba(255, 255, 255, 0.686);
+}
+.table{
+    /* border: none; */
+    margin-left: 40px;
+    border: solid 2px rgba(255, 255, 255, 0);
+  padding-top: 50px;
+}
+textarea{
+    width: 400px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.518);
+}
+.btn{
+    background-color: black;
+    color: #fff;
+    width: 200px;
+    margin-top: 30px;
+}
+.btn:hover{
+    background-color: #fff;
+    color: black;
+    border: solid 2px black;
+}
+.btn1{
+    margin-left: 280px;
+   
+}
+
+        
+       
+    </style>
+</head>
+<body>
+    <div class="  body">
+      <nav class="navbar navbar-expand-lg navbar-light nav1 ">
+        <div class="col-md-4">
+          <img  src="{% static 'images/metro1.png' %}" width="60px" width="60px" alt="">
+         </div>
+          <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="a1" style="padding-left: 300px;" aria-current="page" href="">HOME</a>
+                </li>
+              </ul>
+          </div>
+          
+          <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="a1"  aria-current="page" href="">ABOUT</a>
+                </li>
+              </ul>
+          </div>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a  aria-current="page" href=""><i class="bi bi-person-circle" style="color: #fff; font-size: 2rem; "></i></a>
+              </li>
+            </ul>
+        </div>
+      </nav>
+        <form action="" method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+         <div class="shadow main">
+             <h1>Meassage Replay</h1>
+         <table class="table">
+            <tbody>
+              <tr>
+                <!-- <th scope="row">1</th> -->
+                <td>Name</td>
+                <td>:</td>
+                <td>{{contact.name}}</td>
+              </tr>
+              
+              <tr>
+                <!-- <th scope="row">2</th> -->
+                <td>Email id</td>
+                <td>:</td>
+                <td>{{contact.email}}</td>
+              </tr>
+              <tr>
+                <!-- <th scope="row">2</th> -->
+                <td>message</td>
+                <td>:</td>
+                <td><textarea  id="txt1" >{{contact.message}}</textarea></td>
+              </tr>
+              <tr>
+                <!-- <th scope="row">2</th> -->
+                <td>Replay Meassage</td>
+                <td>:</td>
+                <td><textarea name="rply" id="txt2" ></textarea></td>
+              </tr>
+            </tbody>
+          </table>
+          <button class="btn btn1" type="reset">Reset </button>
+          <button type="submit" class="btn btn-light">Submit</button>
+         </div>
+        </form>
+    </div>
+</body>
+</html>

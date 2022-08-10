@@ -1,0 +1,154 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>art_journey</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'image/alogo.jpg' %}" height="100px"> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/register.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js" integrity="sha512-37T7leoNS06R80c8Ulq7cdCDU5MNQBwlYoy1TX/WUsLFC2eYNqtKlV0QjH7r8JpG/S0GUMZwebnVFLPd6SU5yg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<style>
+    * {
+  margin: 0
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #154a68;
+  padding: 20px;
+  width: 700px;
+  border-radius: 35px;
+  margin-top: 40px;
+  margin-left: 400px;
+  height: 600px;
+  
+}
+
+.container h1 {
+  color: rgb(250, 246, 246);
+  font-family: 'Times New Roman', Times, serif;
+  margin: 20px;
+  padding-bottom: 10px;
+}
+
+.registartion-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+  font-family: 'Times New Roman', Times, serif
+  
+  
+}
+
+.registartion-form input,
+.registartion-form select,
+.registartion-form textarea {
+  border: none;
+  padding: 5px;
+  margin-top: 20px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.registartion-form input:focus,
+.registartion-form textarea:focus {
+  box-shadow: 3px 3px 10px rgb(228, 228, 228), -3px -3px 10px rgb(224, 224, 224);
+  
+}
+
+.registartion-form .submit {
+  width: 100%;
+  padding: 8px 0;
+  font-size: 20px;
+  color: rgb(44, 44, 44);
+  background-color: #ffffff;
+  border-radius: 7px;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.registartion-form .submit:hover {
+  box-shadow: 3px 3px 6px rgb(255, 214, 176);
+}
+input{
+
+  border-radius: 7px;
+  width: 300px;
+}
+
+#language{
+  border-radius: 7px;
+  width: 250px;
+}
+#about{
+  border-radius: 7px;
+  width: 250px;
+}
+.error{
+      color: #f00;
+      border-color:  #f00;
+    }
+    label{
+      display: flex;
+    }
+    select{
+      display: flex;
+    }
+
+</style>
+<body>
+<div class="container">
+    <h1>Draw Details</h1>
+    <form id="registration" class="registartion-form" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <table>
+        <tr>
+          <td><label for="name">Name:</label></td>
+          <td><input type="text" name="a_name" id="name"></td>
+        </tr>
+        <tr>
+          <td><label for="email">Email:</label></td>
+          <td><input type="text" name="a_email" id="email"></td>
+        </tr>
+        <tr class="input-box">
+            <td><span class="details">Upload Image:</span></td>
+            <td><input type="file" name="p_img"></td>
+        </tr>
+        
+        <tr>
+            <td><label for="language">Select Artist:</label></td>
+            <td>
+              <select name="a_category" id="category">
+                <option value="">Choose your Artist </option>
+                <option value=""></option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="email">Due Date:</label></td>
+            <td><input type="date" name="date" id="date"></td>
+          </tr>
+          <tr>
+            <td colspan="2"><input id="reg" type="submit" style="margin-top: 30px;" class="submit" value="UPLOAD" /></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,308 @@
+{% extends "artistapp/artist_master.html" %}
+{% load static %}
+{% block artist_content %}
+  <style>
+      h1{
+          font-family: 'Times New Roman', Times, serif;
+          text-align: center;
+          font-weight: bolder;
+        padding-top: 20px;
+        padding-bottom: 25px;
+      }
+      .box{
+          width: 850px;
+          height: 200px;
+          background-color: #fff;
+          margin-top: 20px;
+          margin-left: 25px;
+      }
+      .bi{
+          margin-top: 70px;
+          margin-left: 40px;
+          color: black;
+      }
+      .p1{
+          margin-left: 25px;
+          margin-top: 5px;
+          color: black;
+      }
+      .p2{
+          margin-left: 20px;
+          margin-top: 5px;
+      }
+      .p3{
+          margin-left: 15px;
+          margin-top: 5px;
+      }
+      .p4{
+          margin-left: 40px;
+          margin-top: 5px;
+      }
+      .box3{
+        width: 900px;
+        height: 350px;
+        margin-top: 50px;
+        background-color: #fff;
+        display: none;
+        border-radius: 25px;
+      }
+      .h1{
+        font-family: 'Times New Roman', Times, serif;
+        margin-left: 20px;
+        padding-top: 20px;
+        padding-bottom: 40px;
+        text-align: center;
+    }
+      
+      
+  </style>
+    <h1>Order Management</h1>
+  <div class="box shadow row">
+      <div class="col-md-3 box2">
+        <a id="pend" href="#b1"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+            <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+          </svg></a>
+          <p class="p1">PENDING</p>
+      </div>
+    
+      <div class="col-md-3 box2">
+        <a id="pro" href="#b2"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+          </svg></a>
+          <p class="p2">PROCESSED</p>
+    </div>
+    
+    <div class="col-md-3 box2">
+        <a id="can" href="#b3"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+          </svg></a>
+          <p class="p3">CANCELLED</p>
+    </div>
+    <div class="col-md-3 box2">
+        <a id="total" href="#b4"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-check2-all" viewBox="0 0 16 16">
+            <path d="M12.354 4.354a.5.5 0 0 0-.708-.708L5 10.293 1.854 7.146a.5.5 0 1 0-.708.708l3.5 3.5a.5.5 0 0 0 .708 0l7-7zm-4.208 7-.896-.897.707-.707.543.543 6.646-6.647a.5.5 0 0 1 .708.708l-7 7a.5.5 0 0 1-.708 0z"/>
+            <path d="m5.354 7.146.896.897-.707.707-.897-.896a.5.5 0 1 1 .708-.708z"/>
+          </svg></a>
+          <p class="p4">TOTAL</p>
+    </div>
+  </div>
+
+  <div id="b1" class="shadow box3">
+    <div class="pending">
+      <div>
+          <h1 class="h1">Pending Work</h1>
+        <table class="table shadow">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">User Name</th>
+                <th scope="col">Ordered date</th>
+                <th scope="col">Last date</th>
+                <th colspan="2" scope="col">Status</th>
+        
+        
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Anupriya</td>
+                    <td>5/4/2022 9:09:31 AM</td>
+                    <td>2/5/2022 9:09:31 AM</td>
+                    <td ><a  class="btn btn-primary" style="width: 80px;" href="">Edit</a></td>
+                    <td ><a  class="btn btn-danger" href="">Cancel</a></td>
+                  </tr>
+            
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Athira</td>
+                    <td>10/4/2022 12:10:41 AM</td>
+                    <td>28/4/2022 12:10:41 AM</td>
+                    <td ><a  class="btn btn-primary" style="width: 80px;" href="">Edit</a></td>
+                    <td ><a  class="btn btn-danger" href="">Cancel</a></td>
+                  </tr>
+            
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Neethu</td>
+                    <td>12/4/2022 7:09:31 AM</td>
+                    <td>5/5/2022 7:09:31 AM</td>
+                    <td ><a  class="btn btn-primary" style="width: 80px;" href="">Edit</a></td>
+                    <td ><a  class="btn btn-danger" href="">Cancel</a></td>
+                  </tr>
+                
+                </tbody>
+            </tbody>
+          </table>
+      </div>
+  
+  </div>
+  </div>
+
+  <div id="b2" class="shadow box3">
+    <div class="processed">
+      <div>
+          <h1 class="h1">Processed Work</h1>
+        <table class="table shadow">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">User Name</th>
+                <th scope="col">Ordered date</th>
+                <th scope="col">Last date</th>
+                <th colspan="2" scope="col">Status</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Anupriya</td>
+                    <td>5/4/2022 9:09:31 AM</td>
+                    <td>2/5/2022 9:09:31 AM</td>
+                    <td ><a  class="btn btn-success" href="">finished</a></td>
+                  </tr>
+            
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Athira</td>
+                    <td>10/4/2022 12:10:41 AM</td>
+                    <td>28/4/2022 12:10:41 AM</td>
+                    <td ><a  class="btn btn-success" href="">finished</a></td>
+                  </tr>
+            
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Neethu</td>
+                    <td>12/4/2022 7:09:31 AM</td>
+                    <td>5/5/2022 7:09:31 AM</td>
+                    <td ><a  class="btn btn-success" href="">finished</a></td>
+                  </tr>
+                
+                </tbody>
+            </tbody>
+          </table>
+      </div>
+  </div>
+  </div>
+
+  <div id="b3" class="shadow box3">
+    <div class="Cancelled">
+      <div>
+          <h1 class="h1">Cancelled Work</h1>
+        <table class="table shadow">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">User Name</th>
+                <th scope="col">Ordered date</th>
+                <th scope="col">Cancelled date</th>
+                <th colspan="2" scope="col">Status</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Anupriya</td>
+                    <td>5/4/2022 9:09:31 AM</td>
+                    <td>2/5/2022 9:09:31 AM</td>
+                    <td ><a  class="btn btn-danger" href="">Cancelled</a></td>
+                  </tr>
+            
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Athira</td>
+                    <td>10/4/2022 12:10:41 AM</td>
+                    <td>28/4/2022 12:10:41 AM</td>
+                    <td ><a  class="btn btn-danger" href="">Cancelled</a></td>
+                  </tr>
+            
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Neethu</td>
+                    <td>12/4/2022 7:09:31 AM</td>
+                    <td>5/5/2022 7:09:31 AM</td>
+                    <td ><a  class="btn btn-danger" href="">Cancelled</a></td>
+                  </tr>
+                
+                </tbody>
+            </tbody>
+          </table>
+      </div>
+  </div>
+  </div>
+
+  <div id="b4" class="shadow box3">
+    <div class="total">
+      <div>
+          <h1 class="h1">Total Work</h1>
+        <table class="table shadow">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">User Name</th>
+                <th scope="col">Finished date</th>
+                <th colspan="2" scope="col">Status</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Anupriya</td>
+                    <td>2/5/2022 9:09:31 AM</td>
+                    <td ><a  class="btn btn-success" href="">Completed</a></td>
+                  </tr>
+            
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Athira</td>
+                    <td>28/4/2022 12:10:41 AM</td>
+                    <td ><a  class="btn btn-success" href="">Completed</a></td>
+                  </tr>
+            
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Neethu</td>
+                    <td>5/5/2022 7:09:31 AM</td>
+                    <td ><a  class="btn btn-success" href="">Completed</a></td>
+                  </tr>
+                
+                </tbody>
+            </tbody>
+          </table>
+      </div>
+  </div>
+  </div>
+
+
+  <script>
+    $(document).ready(function(){
+      $('#pend').click(function(){
+        $('#b1').toggle()
+      })
+    })
+
+    $(document).ready(function(){
+      $('#pro').click(function(){
+        $('#b2').toggle()
+      })
+    })
+
+    $(document).ready(function(){
+      $('#can').click(function(){
+        $('#b3').toggle()
+      })
+    })
+
+    $(document).ready(function(){
+      $('#total').click(function(){
+        $('#b4').toggle()
+      })
+    })
+
+  </script>
+
+  
+{% endblock %}
+
+

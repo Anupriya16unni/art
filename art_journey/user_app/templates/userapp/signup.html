@@ -1,0 +1,246 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>art_journey</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'image/alogo.jpg' %}" height="100px"> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+   
+</head>
+<style>
+    .card-registration .select-input.form-control[readonly]:not([disabled]) {
+  font-size: 1rem;
+  line-height: 2.15;
+  padding-left: .75em;
+  padding-right: .75em;
+}
+.card-registration .select-arrow {
+  top: 13px;
+}
+.container-fluid{
+    width: 950px;
+}
+
+</style>
+<body>
+    <section class="h-100 bg-dark">
+        <div class="container-fluid py-3 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col">
+              <div class="card card-registration my-4">
+                <div class="row g-0">
+                  <div class="col-xl-6 d-none d-xl-block">
+                    <img
+                      src="{% static 'image/img3.jpg' %}"
+                      alt="Sample photo"
+                      width="450px"
+                      height="650px"
+                      style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;"
+                    />
+                  </div>
+                  <div class="col-xl-6">
+                    <div class="card-body p-md-4 text-black">
+                      <h3 class="mb-4 fw-bold text-center">REGISTRATION FORM</h3>
+                      <form action="" method="POST" id="signup" onsubmit="return signup()">
+                      {% csrf_token %}
+                      <div class="row">
+                        <div class="col-md-6 mb-4">
+                          <div class="form-outline">
+                            <input type="text" id="formFname" name="fname" class="form-control form-control-md" />
+                            <span id="s_fname"></span>
+                            <label class="form-label" for="username" placeholder="your name">First name</label>
+                          </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                          <div class="form-outline">
+                            <input type="text" id="formLname" name="lname" class="form-control form-control-md" />
+                            <label class="form-label" for="form3Example1n">Last name</label>
+                          </div>
+                        </div>
+                      </div>
+      
+                      <div class="form-outline mb-2">
+                        <input type="text" id="formAddress" name="address" class="form-control form-control-md" />
+                        <label class="form-label" for="form3Example8">Address</label>
+                      </div>
+      
+                      <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
+      
+                        <h6 class="mb-0 me-4">Gender: </h6>
+      
+                        <div class="form-check form-check-inline mb-0 me-4">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="gender"
+                            id="gender"
+                            value="Female"
+                          />
+                          <label id="gender" class="form-check-label" >Female</label>
+                        </div>
+      
+                        <div class="form-check form-check-inline mb-0 me-4">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="gender"
+                            id="gender"
+                            value="Male"
+                          />
+                          <label id="gender" class="form-check-label">Male</label>
+                        </div>
+      
+                        <div class="form-check form-check-inline mb-0">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="gender"
+                            id="gender"
+                            value="Other"
+                          />
+                          <label name="gender" id="gender" class="form-check-label">Other</label>
+                        </div>
+      
+                      </div>
+      
+
+                      <div class="form-outline mb-4">
+                        <input type="text" id="formEmail" name="email" class="form-control form-control-md" />
+                        <label class="form-label" for="form3Example97">Email ID</label>
+                      </div>
+
+                      <div class="form-outline mb-4">
+                        <input type="password" id="formPass" name="pass" class="form-control form-control-md" />
+                        <label class="form-label" for="form3Example90">Password</label>
+                      </div>
+      
+                      <div class="form-outline mb-2">
+                        <input type="password" id="formCnfpass" class="form-control form-control-md" />
+                        <label class="form-label" for="form3Example99">confirm password</label>
+                      </div>
+      
+                      <div>
+                        <p style="color: green; font-weight: bold; font-size: 20px;">{{ data }}</p>
+                      </div>
+                      
+      
+                      <div class="d-flex justify-content-end pt-1">
+                        <button type="reset" class="btn btn-secondary btn-md">Reset all</button>
+                        <button id="reg" type="submit" class="btn btn-warning btn-md ms-2">Submit form</button>
+                      </div>
+                    </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>  
+      
+      <script>
+        function signup(){
+          var fname=document.getElementById('formFname')
+          var lname=document.getElementById('formLname')
+          var address=document.getElementById('formAddress')
+          var gender=document.getElementsByClassName('form-check-input')
+          var email=document.getElementById('formEmail')
+          var password=document.getElementById('formPass')
+          var conform_pass=document.getElementById('formCnfpass')
+          var pattern=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+      
+          if (fname.value=="")
+          {
+            fname.style.border="solid 2px red"
+            return false
+          }
+          else
+          {
+            fname.style.border="solid 2px black"
+          }
+          if (lname.value=="")
+          {
+            lname.style.border="solid 2px red"
+            return false
+          }
+          else
+          {
+            lname.style.border="solid 2px black"
+          }
+          if (address.value=="")
+          {
+            address.style.border="solid 2px red"
+            return false
+          }
+          else
+          {
+            address.style.border="solid 2px black"
+          }
+
+          if (email.value=="")
+          {
+            email.style.border="solid 2px red"
+            return false
+          }
+          else
+          {
+            email.style.border="solid 2px black"
+          }
+          if(pattern.test(email.value)==false)
+          {
+            email.style.border="solid 2px red"
+            return false
+          }
+          else
+          {
+            email.style.border="solid 2px black"
+          }
+          
+          if(password.value=="")
+          {
+            password.style.border="solid 2px red"
+            return false
+          }
+          else
+          {
+            password.style.border="solid 2px black"
+          }
+          if (password.value.length<8)
+          {
+            password.style.border="solid 2px red"
+            return false
+          }
+          else
+          {
+            password.style.border="solid 2px black"
+          }
+          if(conform_pass.value=="")
+          {
+            conform_pass.style.border="solid 2px red"
+            return false
+          } 
+          else
+          {
+            conform_pass.style.border="solid 2px black"
+          }
+          if(password.value!=conform_pass.value)
+          {
+            conform_pass.style.border="solid 2px red"
+            return false
+          }
+        }        
+      </script>
+</body>
+</html>

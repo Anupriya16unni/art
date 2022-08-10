@@ -1,0 +1,107 @@
+{% extends 'userapp/user_master.html' %}
+{% load static %}
+{% block user_content %}
+<link rel="stylesheet" href="https://blog.getbootstrap.com/2021/01/07/bootstrap-icons-1-3-0/">
+<style>
+  h1{
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    font-weight: bolder;
+  }
+ .b1{
+   font-size: 400px;
+   height: 100px;
+   width: 100px;
+   margin-top: 40px;
+   margin-left: 20px;
+ }
+ .main1{
+   /* background-color: aqua; */
+   width: 400px;
+   height: 100px;
+ }
+ .main1{
+   background-color: rgb(197, 192, 192);
+   /* width: 20px; */
+   height: 200px;
+   /* border-radius: 5px; */
+   border: solid 10px #fff;
+   margin-left: 2px;
+ }
+ .row1{
+   /* width: 500px; */
+   /* background-color: #fff; */
+   /* border-radius: 20px; */
+   width: 900px;
+   height: 450px;
+   margin-left: 10px;
+ }
+ h4{
+   margin-top: 40px;
+ }
+ svg{
+   color: black;
+ }
+ 
+ 
+</style>
+<div>
+    <h1>Your Account</h1>
+</div>
+<div class="row row1 ">
+  <div class="col-md-6 mb-3 main1 row">
+    <div class="col-4">
+      <a href="{% url 'user_login_security' %}">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi b1 bi-lock" viewBox="0 0 16 16">
+        <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zM5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/>
+      </svg>
+    </a>
+    </div>
+    <div class="col-8">
+      <h4>Login and security</h4>
+      <p>Edit login,name,and mobile number</p>
+    </div>
+
+  </div>
+  <div class="col-md-6 main1 row">
+    <div class="col-md-4">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi b1 bi-bag-heart" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5Zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0ZM14 14V5H2v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1ZM8 7.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z"/>
+      </svg>
+    </div>
+    <div class="col-md-8">
+      <h4>Your Order</h4>
+      <p>Track,return,or buy things again</p>
+    </div>
+  </div>
+  <div class="col-md-6 main1 row">
+    <div class="col-md-4">
+      <a href="{% url 'user_address' %}">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi b1 bi-geo-alt-fill" viewBox="0 0 16 16">
+        <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+      </svg>
+    </a>
+    </div>
+    <div class="col-md-8">
+      <h4>Your Address</h4>
+      <p>Edit addresses for  orders  and gift</p>
+    </div>
+  </div>
+  <div class="col-md-6 main1 row">
+     <div class="col-md-4">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi b1 bi-credit-card" viewBox="0 0 16 16">
+        <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z"/>
+        <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z"/>
+      </svg>
+     </div>
+     <div class="col-md-8">
+      <h4>Payment option</h4>
+      <p>Edit or add payment method</p>
+    </div>
+  </div>
+</div>
+
+
+  
+  
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'adminapp/admin_master.html' %}
+{% load static %}
+{% block admin_content %}
+<style>
+    h1{
+    font-family: 'Times New Roman', Times, serif;
+      background: #121FCF;
+      background: -webkit-linear-gradient(to right, #121FCF 0%, #CF1512 100%);
+      background: -moz-linear-gradient(to right, #121FCF 0%, #CF1512 100%);
+      background: linear-gradient(to right, #121FCF 0%, #CF1512 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      padding-top: 100px;
+      font-weight: bolder;
+      margin-bottom: 30px;
+      font-size: 80px;
+    }
+    p{
+        font-size: large;
+        text-align: center;
+    }
+
+    
+</style>
+
+<h1 class="text-center">Welcome,{{profile.username|capfirst}}</h1>
+
+{% endblock %}
