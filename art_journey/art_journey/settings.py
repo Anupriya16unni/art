@@ -79,12 +79,20 @@ WSGI_APPLICATION = 'art_journey.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    #     'NAME': 'ecom_db',
+    #     'USER':'postgres',
+    #     'PASSWORD':'root',
+    #     'HOST':'localhost',
+    #     'PORT':'5432',
+    # }
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'ecom_db',
-        'USER':'postgres',
-        'PASSWORD':'root',
-        'HOST':'localhost',
+        'NAME': 'd3q6tjfgnfm5qk',
+        'USER':'dlunkpssggypxn',
+        'PASSWORD':'1c435620a6e74c6504ccca226bdf070b01fd03680317abe962e76237b02b9b7b',
+        'HOST':'ec2-3-223-242-224.compute-1.amazonaws.com',
         'PORT':'5432',
     }
 }
@@ -145,3 +153,7 @@ EMAIL_USE_TLS=True
 EMAIL_PORT=587
 EMAIL_HOST_USER="oanupriya16@yahoo.com"
 EMAIL_HOST_PASSWORD="bmizecwzrzjwtcyx"
+
+import dj_database_url 
+prod_db  =  dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(prod_db)
